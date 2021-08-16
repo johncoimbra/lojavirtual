@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LojaVirtiual">
         <activity
+            android:name=".MainScreenActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_screen"
+            android:theme="@style/Theme.LojaVirtiual.NoActionBar" />
+        <activity
             android:name=".form.RegisterActivity"
             android:exported="true" />
         <activity

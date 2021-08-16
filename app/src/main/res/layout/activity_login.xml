@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/shape_degrade"
         android:orientation="vertical"
-        tools:context=".form.LoginActivity">
+        tools:context=".form.LoginActivity"
+        android:id="@+id/layout_login">
 
         <ImageView
             android:layout_width="200dp"
