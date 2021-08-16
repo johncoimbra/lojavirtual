@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "725360136791",
+    "project_id": "loja-virtual-26a98",
+    "storage_bucket": "loja-virtual-26a98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725360136791:android:2716033e7f727b2e9dc912",
+        "android_client_info": {
+          "package_name": "com.johncoimbra.lojavirtiual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725360136791-d6kj29ra8srjidehh9dh88k4qri00k4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.johncoimbra.lojavirtiual",
+            "certificate_hash": "febc4321e4ad31729aabf6fdb21494318fe59bf1"
+          }
+        },
+        {
+          "client_id": "725360136791-742hs4uf3leome1rs543qgicljj22ohm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrrhiOxfD4tdhfJNFrSjHEwTeTxjhcA3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725360136791-742hs4uf3leome1rs543qgicljj22ohm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
