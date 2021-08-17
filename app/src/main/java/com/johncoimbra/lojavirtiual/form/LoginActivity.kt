@@ -59,6 +59,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun verifyUserLogged(){
+        val mCurrentUser = FirebaseAuth.getInstance().currentUser
+        if (mCurrentUser != null)
+            openMainScreen()
+    }
+
     private fun openMainScreen(){
         startActivity(Intent(this, MainScreenActivity::class.java))
         finish()
