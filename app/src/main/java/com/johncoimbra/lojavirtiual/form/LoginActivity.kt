@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -43,7 +44,9 @@ class LoginActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener {
                     if(it.isSuccessful){
-                        openMainScreen()
+                        binding.frameLoading.visibility = View.VISIBLE
+                        Handler().postDelayed({openMainScreen()}, 3000)
+
                     }
                 }.addOnFailureListener {
                     var snackbar = Snackbar.make(binding.layoutLogin,"Erro ao logar o usuário!", Snackbar.LENGTH_INDEFINITE
