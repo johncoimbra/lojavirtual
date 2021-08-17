@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar!!.hide()
+        verifyUserLogged()
 
         binding.textRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
