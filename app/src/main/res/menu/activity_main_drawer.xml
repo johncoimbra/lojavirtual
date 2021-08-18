@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_produtos" />
         <item
-            android:id="@+id/nav_castrar_produtos"
+            android:id="@+id/nav_cadastrar_produtos"
             android:icon="@drawable/ic_add"
             android:title="@string/menu_cadastro_produtos" />
         <item
