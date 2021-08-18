@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.johncoimbra.lojavirtiual.databinding.ActivityMainScreenBinding
 import com.johncoimbra.lojavirtiual.form.LoginActivity
+import com.johncoimbra.lojavirtiual.fragments.CadastroProdutosActivity
 import com.johncoimbra.lojavirtiual.fragments.ProdutosFragment
 
 class MainScreenActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -47,8 +48,8 @@ class MainScreenActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val id = item.itemId
         if(id==R.id.nav_produtos){
             loadFragment(ProdutosFragment())
-        }else if(id==R.id.nav_castrar_produtos){
-
+        }else if(id==R.id.nav_cadastrar_produtos){
+            startActivity(Intent(this, CadastroProdutosActivity::class.java))
         }else if(id==R.id.nav_contato){
 
         }
