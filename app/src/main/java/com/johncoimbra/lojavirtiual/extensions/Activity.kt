@@ -5,12 +5,8 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
-fun Activity.addFragment(
-    mFragmentLoaded: Fragment,
-    mSupportFragmentManager: FragmentManager,
-    mFrameLayout: FrameLayout
-) {
-    val fragment = mSupportFragmentManager.beginTransaction()
-    fragment.replace(mFrameLayout.id, mFragmentLoaded)
+fun Activity.addFragment(mFLoaded: Fragment, mSFManager: FragmentManager, mFLayout: FrameLayout) {
+    val fragment = mSFManager.beginTransaction()
+    fragment.replace(mFLayout.id, mFLoaded)
     fragment.commit()
 }

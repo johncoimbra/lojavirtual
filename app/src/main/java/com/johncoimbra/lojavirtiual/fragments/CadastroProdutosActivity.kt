@@ -46,7 +46,7 @@ class CadastroProdutosActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveDataFirebase(){
+    private fun saveDataFirebase() {
         val nameFile = UUID.randomUUID().toString()
         val mReferenceFirebase = FirebaseStorage.getInstance().getReference(
             "/imagens/${nameFile}"
@@ -54,7 +54,7 @@ class CadastroProdutosActivity : AppCompatActivity() {
         mSelectUri?.let {
             mReferenceFirebase.putFile(it)
                 .addOnSuccessListener {
-                    mReferenceFirebase.downloadUrl.addOnSuccessListener {  }
+                    mReferenceFirebase.downloadUrl.addOnSuccessListener { }
                 }
         }
     }
