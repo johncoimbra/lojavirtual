@@ -46,6 +46,7 @@ class CadastroProdutosActivity : AppCompatActivity() {
 
         binding.btCadastrarProduto.setOnClickListener {
             saveDataFirebase()
+            finish()
         }
     }
 
