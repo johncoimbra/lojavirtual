@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.johncoimbra.lojavirtiual.R
 import com.johncoimbra.lojavirtiual.databinding.ActivityMainScreenBinding
+import com.johncoimbra.lojavirtiual.extensions.addFragment
 import com.johncoimbra.lojavirtiual.form.LoginActivity
 import com.johncoimbra.lojavirtiual.fragments.CadastroProdutosActivity
 import com.johncoimbra.lojavirtiual.fragments.ProdutosFragment
@@ -57,9 +58,7 @@ class MainScreenActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     }
 
     private fun loadFragment(mFragmentLoaded: Fragment) {
-        val fragment = supportFragmentManager.beginTransaction()
-        fragment.replace(binding.appBarMainScreen.frameContainer.id, mFragmentLoaded)
-        fragment.commit()
+        addFragment(mFragmentLoaded, supportFragmentManager, binding.appBarMainScreen.frameContainer)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
