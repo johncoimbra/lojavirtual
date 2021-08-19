@@ -1,10 +1,10 @@
-package com.johncoimbra.lojavirtiual
+package com.johncoimbra.lojavirtiual.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.heinrichreimersoftware.materialintro.app.IntroActivity
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide
+import com.johncoimbra.lojavirtiual.R
 import com.johncoimbra.lojavirtiual.form.LoginActivity
 
 class SlidesActivity : IntroActivity() {

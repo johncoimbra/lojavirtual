@@ -1,7 +1,8 @@
-package com.johncoimbra.lojavirtiual
+package com.johncoimbra.lojavirtiual.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.johncoimbra.lojavirtiual.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

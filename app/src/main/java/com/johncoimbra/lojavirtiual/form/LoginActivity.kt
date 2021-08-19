@@ -8,8 +8,7 @@ import android.os.Handler
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.johncoimbra.lojavirtiual.MainScreenActivity
-import com.johncoimbra.lojavirtiual.R
+import com.johncoimbra.lojavirtiual.ui.MainScreenActivity
 import com.johncoimbra.lojavirtiual.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
