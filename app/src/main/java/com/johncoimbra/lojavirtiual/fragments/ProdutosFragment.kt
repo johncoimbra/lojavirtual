@@ -1,16 +1,18 @@
 package com.johncoimbra.lojavirtiual.fragments
 
-import android.os.Binder
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.afollestad.materialdialogs.MaterialDialog
+import com.google.android.material.dialog.MaterialDialogs
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import com.johncoimbra.lojavirtiual.R
 import com.johncoimbra.lojavirtiual.databinding.FragmentProdutosBinding
 import com.johncoimbra.lojavirtiual.model.Data
@@ -18,7 +20,6 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import java.text.FieldPosition
 
 class ProdutosFragment : Fragment() {
 
@@ -37,11 +38,28 @@ class ProdutosFragment : Fragment() {
 
         mAdapter = GroupAdapter()
         recyclerViewProdutos.adapter = mAdapter
-        mAdapter.setOnItemClickListener { item, view ->
-            Toast.makeText(context, "Item Clicado", Toast.LENGTH_SHORT).show()
-        }
         getProducts()
 
+        mAdapter.setOnItemClickListener { item, view ->
+            val mDialogView = LayoutInflater.from(context).inflate(R.layout.layout_payment, null)
+            val builder = AlertDialog.Builder(context)
+                .setView(mDialogView)
+                .setTitle("Formas de Pagamento")
+            val mAlertDialog = builder.show()
+
+            mAlertDialog.findViewById<TextView>(R.id.text_payment).setOnClickListener {
+                mAlertDialog.dismiss()
+                val mPayment = mAlertDialog.findViewById<EditText>(R.id.edit_payment).text.toString()
+                if(mPayment == "249,99"){
+                    MaterialDialog.Builder(requireContext())
+                        .title("Pagamento Concluído")
+                        .content("Obrigado pela compra, volte sempre!")
+                        .show()
+                }else{
+                    Toast.makeText(context, "Pagamento Recusado", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     private inner class productsItem(internal val mAdapterProdutos: Data) : Item<ViewHolder>() {
