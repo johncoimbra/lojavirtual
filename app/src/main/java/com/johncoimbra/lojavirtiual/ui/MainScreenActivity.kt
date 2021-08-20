@@ -49,7 +49,7 @@ class MainScreenActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         }else if(id== R.id.nav_cadastrar_produtos){
             startActivity(Intent(this, CadastroProdutosActivity::class.java))
         }else if(id== R.id.nav_contato){
-
+            sendEmail()
         }
 
         val drawer = binding.drawerLayout
@@ -80,5 +80,18 @@ class MainScreenActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     private fun backToLogin(){
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
+    }
+
+    private fun sendEmail(){
+        val PACKAGEM_GOOGLE_EMAIL = "com.google.android.gm"
+        val email = Intent(Intent.ACTION_SEND)
+        email.putExtra(Intent.EXTRA_EMAIL, arrayOf("")) // Enviar um e-mail
+        email.putExtra(Intent.EXTRA_SUBJECT, "") // Assunto do e-mail
+        email.putExtra(Intent.EXTRA_TEXT, "") // Corpo do e-mail
+
+        //Configurações de apps de envio de e-mail
+        email.type = "message/rec822" // seta somente aplicativos de envio de e-mail
+        email.setPackage(PACKAGEM_GOOGLE_EMAIL)
+        startActivity(Intent.createChooser(email, "Escolha o seu aplicativo de e-mail!"))
     }
 }
